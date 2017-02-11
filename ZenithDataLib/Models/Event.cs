@@ -14,9 +14,11 @@ namespace ZenithDataLib.Models
         [Key]
         public int EventId { get; set; }
 
+        [DataType(DataType.DateTime)]
         [Display(Name = "Event Start Time"), Required]
         public DateTime EventFrom { get; set; }
 
+        [DataType(DataType.DateTime)]
         [Display(Name = "Event End Time"), Required]
         public DateTime EventTo { get; set; }
 
@@ -30,10 +32,11 @@ namespace ZenithDataLib.Models
         [ForeignKey("ActivityId")]
         public virtual Activity Activity { get; set; }
 
-        [HiddenInput(DisplayValue = false), Required]
+        [DataType(DataType.DateTime)]
+        [HiddenInput(DisplayValue = false)]
         public DateTime CreationDate { get; set; }
 
-        [Display(Name = "Is active"), Required]
+        [Display(Name = "Is Active"), Required]
         public bool IsActive { get; set; }
     }
 }

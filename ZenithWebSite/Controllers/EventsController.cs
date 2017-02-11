@@ -40,8 +40,12 @@ namespace ZenithWebSite.Controllers
         // GET: Events/Create
         public ActionResult Create()
         {
+            //Event curEvent = new Event();
+            //curEvent.CreationDate = DateTime.Now;
+            //curEvent.Username = User.Identity.GetUserName();
+
             ViewBag.ActivityId = new SelectList(db.Activities, "ActivityId", "ActivityDescription");
-            return View();
+            return View(/*curEvent*/);
         }
 
         // POST: Events/Create
@@ -51,19 +55,21 @@ namespace ZenithWebSite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "EventId,EventFrom,EventTo,Username,ActivityId,IsActive")] Event @event)
         {
-            // FOR TESTING
+            // FOR DEBUGGING
+
             var errors = ModelState.Values.SelectMany(v => v.Errors);
             foreach (var error in errors)
             {
-                Response.Write(error);
+                Response.Write(error.ErrorMessage);
             }
-            // TESTING END
+
+            // DEBUGGING END
 
             if (ModelState.IsValid)
-            {   
+            {
                 @event.CreationDate = DateTime.Now;
-                //@event.Username = User.Identity.GetUserName();
-                
+                // @event.Username = User.Identity.GetUserName();
+
                 db.Events.Add(@event);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -99,6 +105,7 @@ namespace ZenithWebSite.Controllers
             if (ModelState.IsValid)
             {
                 @event.CreationDate = DateTime.Now;
+                @event.Username = User.Identity.GetUserName();
 
                 db.Entry(@event).State = EntityState.Modified;
                 db.SaveChanges();
