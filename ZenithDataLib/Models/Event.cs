@@ -26,11 +26,11 @@ namespace ZenithDataLib.Models
         [Display(Name = "Activity"), Required]
         public int ActivityId { get; set; }
 
-        [Display(Name = "Activity"), Required]
+        [Display(Name = "Activity")]
         [ForeignKey("ActivityId")]
         public virtual Activity Activity { get; set; }
 
-        [ScaffoldColumn(false)]
+        [HiddenInput(DisplayValue = false), Required]
         public DateTime CreationDate { get; set; }
 
         [Display(Name = "Is active"), Required]

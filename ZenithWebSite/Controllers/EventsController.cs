@@ -51,6 +51,14 @@ namespace ZenithWebSite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "EventId,EventFrom,EventTo,Username,ActivityId,IsActive")] Event @event)
         {
+            // FOR TESTING
+            var errors = ModelState.Values.SelectMany(v => v.Errors);
+            foreach (var error in errors)
+            {
+                Response.Write(error);
+            }
+            // TESTING END
+
             if (ModelState.IsValid)
             {   
                 @event.CreationDate = DateTime.Now;
@@ -90,6 +98,8 @@ namespace ZenithWebSite.Controllers
         {
             if (ModelState.IsValid)
             {
+                @event.CreationDate = DateTime.Now;
+
                 db.Entry(@event).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
