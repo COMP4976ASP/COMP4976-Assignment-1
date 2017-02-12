@@ -176,9 +176,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ZenithMigrations\201702110400274_FirstMigration.cs" />
-    <Compile Include="Migrations\ZenithMigrations\201702110400274_FirstMigration.Designer.cs">
-      <DependentUpon>201702110400274_FirstMigration.cs</DependentUpon>
+    <Compile Include="Migrations\ZenithMigrations\201702120353231_FirstMigration.cs" />
+    <Compile Include="Migrations\ZenithMigrations\201702120353231_FirstMigration.Designer.cs">
+      <DependentUpon>201702120353231_FirstMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ZenithMigrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -282,8 +282,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\ZenithMigrations\201702110400274_FirstMigration.resx">
-      <DependentUpon>201702110400274_FirstMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\ZenithMigrations\201702120353231_FirstMigration.resx">
+      <DependentUpon>201702120353231_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
