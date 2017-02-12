@@ -115,7 +115,7 @@ namespace ZenithWebSite.Migrations.ZenithMigrations
                     CreationDate = new DateTime(2017, 2, 10, 9, 00, 0)
                 },new Activity
                 {
-                    ActivityDescription = "- Blood Pressure Screening",
+                    ActivityDescription = "Blood Pressure Screening",
                     CreationDate = new DateTime(2017, 2, 10, 9, 00, 0)
                 },
                 new Activity
