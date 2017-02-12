@@ -2,9 +2,10 @@
 @{
     ViewBag.Title = "Zenith Society";
 }
-<div class="jumbotron">
-    <h1 style="color:darkgreen">Welcome to Zenith Society</h1>
-    <p class="lead " style="color:forestgreen">A family oriented garden for the seniors.</p>
+
+<div style="background:transparent !important" class="jumbotron" >
+    <h1 class="text-center">Welcome to Zenith Society</h1>
+    <p class="text-center">The Zenith Society is a family oriented non-for-profit organization that holds events during the week.</p>
 
 
 </div>
@@ -13,7 +14,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <th colspan="2" class="success text-center">
+                <th colspan="2" class="alert-success text-center">
                     @item.Key
                 </th>
             </tr>
