@@ -21,7 +21,7 @@ namespace ZenithDataLib.Models
         public DateTime EventTo { get; set; }
 
         [Display(Name = "Organizer")]
-        [HiddenInput(DisplayValue = false)]
+        [ScaffoldColumn(false)]
         public string Username { get; set; }
 
         [Display(Name = "Activity"), Required]
