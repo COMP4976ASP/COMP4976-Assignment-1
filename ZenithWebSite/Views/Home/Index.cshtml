@@ -3,11 +3,9 @@
     ViewBag.Title = "Zenith Society";
 }
 
-<div style="background:transparent !important" class="jumbotron" >
+<div style="background:transparent !important" class="jumbotron">
     <h1 class="text-center">Welcome to Zenith Society</h1>
     <p class="text-center">The Zenith Society is a family oriented non-for-profit organization that holds events during the week.</p>
-
-
 </div>
 <div class="container">
     <table class="table table-bordered">
@@ -20,14 +18,31 @@
             </tr>
             foreach (var details in item.Value)
             {
-                <tr>
-                    <td>
-                        @details.EventFrom.ToShortTimeString() - @details.EventTo.ToShortTimeString()
-                    </td>
-                    <td>
-                        @details.Activity.ActivityDescription
-                    </td>
-                </tr>
+                if (HttpContext.Current.User.IsInRole("Admin") || HttpContext.Current.User.IsInRole("Member"))
+                {
+                    <tr>
+                        <td>
+                            @details.EventFrom.ToShortTimeString() - @details.EventTo.ToShortTimeString()
+                        </td>
+                        <td>
+                            @details.Activity.ActivityDescription
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    if (details.IsActive)
+                    {
+                        <tr>
+                            <td>
+                                @details.EventFrom.ToShortTimeString() - @details.EventTo.ToShortTimeString()
+                            </td>
+                            <td>
+                                @details.Activity.ActivityDescription
+                            </td>
+                        </tr>
+                    }
+                }
             }
         }
     </table>

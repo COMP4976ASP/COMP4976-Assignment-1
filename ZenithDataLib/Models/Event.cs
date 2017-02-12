@@ -20,7 +20,8 @@ namespace ZenithDataLib.Models
         [Display(Name = "Event End Time"), Required]
         public DateTime EventTo { get; set; }
 
-        [Display(Name = "Organizer"), Required]
+        [Display(Name = "Organizer")]
+        [HiddenInput(DisplayValue = false)]
         public string Username { get; set; }
 
         [Display(Name = "Activity"), Required]

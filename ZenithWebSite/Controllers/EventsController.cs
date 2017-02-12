@@ -55,7 +55,7 @@ namespace ZenithWebSite.Controllers
             if (ModelState.IsValid)
             {
                 @event.CreationDate = DateTime.Now;
-                //@event.Username = User.Identity.GetUserName();
+                @event.Username = User.Identity.GetUserName();
 
                 db.Events.Add(@event);
                 db.SaveChanges();
