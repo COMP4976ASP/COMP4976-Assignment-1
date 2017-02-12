@@ -11,7 +11,7 @@ using ZenithDataLib.Models;
 
 namespace ZenithWebSite.Controllers
 {
-    //[CustomAuthorize(Users = Role.Admin)]
+    [CustomAuthorize(Users = Role.Admin)]
     public class EventsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

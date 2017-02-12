@@ -10,6 +10,7 @@ using ZenithDataLib.Models;
 
 namespace ZenithWebSite.Controllers
 {
+    [CustomAuthorize(Users = Role.Admin)]
     public class ActivitiesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
