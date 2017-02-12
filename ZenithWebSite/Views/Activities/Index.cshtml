@@ -6,19 +6,17 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ActivityDescription)
         </th>
-        @*
-        <th>
-            @Html.DisplayNameFor(model => model.EventId)
-        </th>
-        *@
         <th></th>
     </tr>
 
@@ -27,16 +25,14 @@
         <td>
             @Html.DisplayFor(modelItem => item.ActivityDescription)
         </td>
-        @*
-        <td>
-            @Html.DisplayFor(modelItem => item.EventId)
-        </td>
-        *@
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ActivityId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ActivityId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ActivityId })
-        </td>
+        @if (User.IsInRole("Admin"))
+        {
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ActivityId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ActivityId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ActivityId })
+            </td>
+        }
     </tr>
 }
 
