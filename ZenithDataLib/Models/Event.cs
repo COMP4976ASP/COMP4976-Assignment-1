@@ -32,7 +32,6 @@ namespace ZenithDataLib.Models
         public virtual Activity Activity { get; set; }
 
         [DataType(DataType.DateTime)]
-        [HiddenInput(DisplayValue = false)]
         public DateTime CreationDate { get; set; }
 
         [Display(Name = "Is Active"), Required]

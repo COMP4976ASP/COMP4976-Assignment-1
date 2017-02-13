@@ -50,7 +50,7 @@ namespace ZenithWebSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EventId,EventFrom,EventTo,Username,ActivityId,IsActive")] Event @event)
+        public ActionResult Create([Bind(Include = "EventId,EventFrom,EventTo,Username,ActivityId,CreationDate,IsActive")] Event @event)
         {
             if (ModelState.IsValid)
             {
