@@ -20,7 +20,7 @@ namespace ZenithDataLib.Models
         [Display(Name = "Event End Time"), Required]
         public DateTime EventTo { get; set; }
 
-        [Display(Name = "Organizer")]
+        [Display(Name = "Created by")]
         [ScaffoldColumn(false)]
         public string Username { get; set; }
 
@@ -32,6 +32,7 @@ namespace ZenithDataLib.Models
         public virtual Activity Activity { get; set; }
 
         [DataType(DataType.DateTime)]
+        [Display(Name = "Created on"), Required]
         public DateTime CreationDate { get; set; }
 
         [Display(Name = "Is Active"), Required]
